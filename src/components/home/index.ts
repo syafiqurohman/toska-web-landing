@@ -1,0 +1,6 @@
+export { default as HomeHero } from './hero'
+export { default as HomeHardware } from './hardware'
+export { default as HomeHomeWhyUs } from './whyus'
+export { default as HomeTestimonial } from './testimonial'
+export { default as HomePartnersLogo } from './partners'
+export { default as HomeNewsLetter } from './newsletter'
