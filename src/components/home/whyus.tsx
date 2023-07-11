@@ -42,7 +42,14 @@ const HomeWhyUs: FC = () => {
         <Grid container spacing={3}>
           <Grid item xs={12} md={5}>
             <Box sx={{ position: 'relative' }}>
-              <Image src="/images/home-why-us.png" width={650} height={678} quality={97} alt="Feature img" />
+              <Image
+                src="/images/home-why-us.png"
+                layout="responsive"
+                width={650}
+                height={678}
+                quality={97}
+                alt="Why Us img"
+              />
               <Box
                 sx={{
                   position: 'absolute',
