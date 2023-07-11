@@ -24,9 +24,7 @@ const Footer: FC = () => {
               <FooterSocialLinks />
             </Box>
           </Grid>
-          <Grid item xs={12} md={7}>
-            <FooterNavigation />
-          </Grid>
+          <Grid item xs={12} md={7}></Grid>
         </Grid>
       </Container>
     </Box>

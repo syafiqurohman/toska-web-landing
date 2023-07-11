@@ -6,6 +6,7 @@ import { EmotionCache } from '@emotion/cache'
 import { CacheProvider } from '@emotion/react'
 import { createEmotionCache } from '@/utils'
 import { MUIProvider } from '@/providers'
+import theme from '@/config/theme'
 import 'slick-carousel/slick/slick.css'
 import '@/styles/globals.css'
 import '@/styles/react-slick.css'
@@ -30,6 +31,25 @@ const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
     <CacheProvider value={emotionCache}>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <meta charSet="utf-8" />
+        <link rel="icon" href="/favicon-01.svg" />
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+        {/* PWA primary color */}
+        <meta name="theme-color" content={theme.palette.background.paper} />
+
+        <meta content="#fbfbfb" name="theme-color" />
+        <meta content="#fbfbfb" name="msapplication-navbutton-color" />
+        <meta content="#fbfbfb" name="apple-mobile-web-app-status-bar-style" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,700;1,500;1,700&display=swap"
+          rel="stylesheet"
+        />
+
         <title>TOSKA | The Most Powerfull Retail App </title>
       </Head>
       <MUIProvider>

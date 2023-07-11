@@ -1,4 +1,5 @@
-import * as React from 'react'
+import React, { useState, ChangeEvent, FormEvent } from 'react'
+import { styled } from '@mui/system'
 import Button from '@mui/material/Button'
 import CssBaseline from '@mui/material/CssBaseline'
 import TextField from '@mui/material/TextField'
@@ -17,36 +18,49 @@ import Typography from '@mui/material/Typography'
 import Image from 'next/image'
 import Visibility from '@mui/icons-material/Visibility'
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
+import { signIn } from 'next-auth/react'
 
-function Copyright(props: any) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  )
-}
-
+const Form = styled('form')`
+  width: 100%;
+  margin-top: ${({ theme }) => theme.spacing(1)};
+`
+const SubmitButton = styled(Button)`
+  margin: ${({ theme }) => theme.spacing(3, 0, 2)};
+`
 export default function SignInSide() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const data = new FormData(event.currentTarget)
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    })
-  }
-
-  const [showPassword, setShowPassword] = React.useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
 
   const handleClickShowPassword = () => setShowPassword((show) => !show)
 
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value)
+  }
+
+  const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value)
+  }
+
   const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
+  }
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const result = await signIn('credentials', {
+      email,
+      password,
+      redirect: true,
+      callbackUrl: '/panduan',
+    })
+
+    if (result?.error) {
+      console.log(result.error)
+    } else {
+      console.log(result)
+    }
   }
 
   return (
@@ -81,13 +95,14 @@ export default function SignInSide() {
           <Typography component="h1" variant="h3" sx={{ mt: 3 }}>
             Masuk dan Akses Panduan
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 2 }}>
+          <Form onSubmit={handleSubmit}>
             <TextField
+              onChange={handleEmailChange}
               margin="normal"
               required
               fullWidth
               id="email"
-              label="Email Address"
+              label="Email"
               name="email"
               autoComplete="email"
               autoFocus
@@ -110,14 +125,21 @@ export default function SignInSide() {
                   </InputAdornment>
                 }
                 label="Password"
+                onChange={handlePasswordChange}
               />
             </FormControl>
             <FormControlLabel control={<Checkbox value="remember" color="primary" />} label="Remember me" />
-            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+            <SubmitButton type="submit" fullWidth variant="contained">
               Sign In
-            </Button>
-            <Copyright sx={{ mt: 5 }} />
-          </Box>
+            </SubmitButton>
+            <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 5 }}>
+              &copy;{' '}
+              <Link color="inherit" href="https://mui.com/">
+                TenTackle
+              </Link>{' '}
+              {new Date().getFullYear()}.
+            </Typography>
+          </Form>
         </Box>
       </Grid>
     </Grid>

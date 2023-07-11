@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from 'react'
 import { ThemeProvider } from '@mui/material'
+import { SessionProvider } from 'next-auth/react'
 
 import theme from '@/config/theme'
 
@@ -8,7 +9,11 @@ interface Props {
 }
 
 const MUIProvider: FC<Props> = ({ children }) => {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
+  return (
+    <SessionProvider>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    </SessionProvider>
+  )
 }
 
 export default MUIProvider
