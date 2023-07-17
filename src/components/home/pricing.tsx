@@ -8,14 +8,16 @@ import { pricingData } from './pricing.data'
 import CheckCircleTwoToneIcon from '@mui/icons-material/CheckCircleTwoTone'
 
 const StyledCard = styled(Card)(({ theme }) => ({
-  maxWidth: 360,
+  maxWidth: 370,
   padding: 10,
+  margin: 4,
   marginTop: theme.spacing(2),
-  borderRadius: 25,
+  borderRadius: 15,
 }))
 
 const ExpandButton = styled(Button)(({ theme }) => ({
   marginTop: theme.spacing(2),
+  borderRadius: 10,
 }))
 
 const ButtonContainer = styled(Box)({
@@ -79,7 +81,7 @@ const CardPricing = () => {
               backgroundColor: 'unset',
             }}
           >
-            Harga{' '}
+            Harga{' Terbaik '}
             <Box
               sx={{
                 position: 'absolute',
@@ -92,7 +94,6 @@ const CardPricing = () => {
               <img src="/images/headline-curve.svg" alt="Headline curve" />
             </Box>
           </Typography>
-          Terbaik
         </Typography>
         <Typography sx={{ color: 'text.secondary', mb: 2 }}>
           Set the way of learning according to your wishes with some of the benefits that you get us, so you on enjoy

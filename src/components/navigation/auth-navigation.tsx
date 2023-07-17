@@ -1,5 +1,4 @@
-'use client'
-import React, { FC } from 'react'
+import React from 'react'
 import Box from '@mui/material/Box'
 import { StyledButton } from '@/components/styled-button'
 import { signIn, signOut, useSession } from 'next-auth/react'
@@ -12,7 +11,12 @@ import Tooltip from '@mui/material/Tooltip'
 import AutoStoriesIcon from '@mui/icons-material/AutoStories'
 import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded'
 
-const AuthNavigation: FC = () => {
+const openNewPage = () => {
+  const newWindow = window.open('/panduan', '_blank')
+  newWindow?.focus()
+}
+
+const AuthNavigation: React.FC = () => {
   const { data: session } = useSession()
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
@@ -22,6 +26,7 @@ const AuthNavigation: FC = () => {
   const handleClose = () => {
     setAnchorEl(null)
   }
+
   if (session && session.user) {
     return (
       <Box sx={{ '& button:first-child': { mr: 2 } }}>
@@ -72,7 +77,7 @@ const AuthNavigation: FC = () => {
           transformOrigin={{ horizontal: 'right', vertical: 'top' }}
           anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
         >
-          <MenuItem onClick={handleClose}>
+          <MenuItem onClick={openNewPage}>
             <ListItemIcon>
               <AutoStoriesIcon fontSize="small" />
             </ListItemIcon>{' '}
@@ -92,7 +97,7 @@ const AuthNavigation: FC = () => {
 
   return (
     <Box sx={{ '& button:first-child': { mr: 2 } }}>
-      <StyledButton disableHoverEffect={true} onClick={() => signIn()}>
+      <StyledButton disableHoverEffect={true} onClick={openNewPage}>
         Panduan
       </StyledButton>
     </Box>

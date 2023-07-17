@@ -1,9 +1,17 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import { Link as ScrollLink } from 'react-scroll'
 import { navigations } from './navigation.data'
+import { useRouter } from 'next/router'
 
 const Navigation: FC = () => {
+  const [isHome, setIsHome] = useState<boolean>(true)
+  const router = useRouter()
+
+  useEffect(() => {
+    setIsHome(router.pathname === '/')
+  }, [router.pathname])
+
   return (
     <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
       {navigations.map(({ path: destination, label }) => (
@@ -14,11 +22,11 @@ const Navigation: FC = () => {
           to={destination}
           spy={true}
           smooth={true}
-          duration={350}
+          duration={700}
           sx={{
             position: 'relative',
-            color: 'text.disabled',
-            cursor: 'pointer',
+            color: isHome ? 'text.disabled' : 'text.primary',
+            cursor: isHome ? 'pointer' : 'default',
             fontWeight: 500,
             display: 'inline-flex',
             alignItems: 'center',
@@ -53,7 +61,7 @@ const Navigation: FC = () => {
             {/* eslint-disable-next-line */}
             <img src="/images/headline-curve.svg" alt="Headline curve" />
           </Box>
-          {label}
+          {isHome ? label : ''}
         </Box>
       ))}
     </Box>

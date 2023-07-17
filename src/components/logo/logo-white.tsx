@@ -8,18 +8,18 @@ interface Props {
   variant?: 'primary' | 'secondary'
 }
 
-const Logo: FC<Props> = ({ onClick, variant }) => {
+const LogoWhite: FC<Props> = ({ onClick, variant }) => {
   return (
     <Box onClick={onClick}>
       <Link href="/">
-        <Image src="/images/toska-logo.png" alt="logo-toska" width={75} height={27} quality={100} />
+        <Image src="/images/toska-logo-white.png" alt="logo-toska-white" width={110} height={40} quality={100} />
       </Link>
     </Box>
   )
 }
 
-Logo.defaultProps = {
+LogoWhite.defaultProps = {
   variant: 'primary',
 }
 
-export default Logo
+export default LogoWhite

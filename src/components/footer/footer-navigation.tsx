@@ -3,29 +3,24 @@ import Link from 'next/link'
 import Grid from '@mui/material/Grid'
 import MuiLink from '@mui/material/Link'
 import type { Navigation } from '@/interfaces/navigation'
-import { navigations as headerNavigations } from '@/components/navigation/navigation.data'
+
 import { FooterSectionTitle } from '@/components/footer'
+import { Box } from '@mui/material'
 
 const courseMenu: Array<Navigation> = [
   {
-    label: 'UI/UX Design',
-    path: '#',
+    label: 'Kenapa Toska?',
+    path: '#whyus',
   },
   {
-    label: 'Mobile Development',
-    path: '#',
+    label: 'Fitur',
+    path: '/fitur',
   },
   {
-    label: 'Machine Learning',
-    path: '#',
-  },
-  {
-    label: 'Web Development',
-    path: '#',
+    label: 'Panduan',
+    path: '/panduan',
   },
 ]
-
-const pageMenu = headerNavigations
 
 const companyMenu: Array<Navigation> = [
   { label: 'Contact Us', path: '#' },
@@ -41,9 +36,8 @@ interface NavigationItemProps {
 
 const NavigationItem: FC<NavigationItemProps> = ({ label, path }) => {
   return (
-    <Link href={path} passHref>
+    <Link href={path} passHref legacyBehavior>
       <MuiLink
-        underline="hover"
         sx={{
           display: 'block',
           mb: 1,
@@ -59,20 +53,14 @@ const NavigationItem: FC<NavigationItemProps> = ({ label, path }) => {
 const FooterNavigation: FC = () => {
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} md={4}>
-        <FooterSectionTitle title="Course" />
+      <Grid item xs={12} md={6}>
+        <FooterSectionTitle title="INFORMASI" />
         {courseMenu.map(({ label, path }, index) => (
-          <NavigationItem key={index + path} label={label} path={/* path */ '#'} />
-        ))}
-      </Grid>
-      <Grid item xs={12} md={4}>
-        <FooterSectionTitle title="Menu" />
-        {pageMenu.map(({ label, path }, index) => (
           <NavigationItem key={index + path} label={label} path={path} />
         ))}
       </Grid>
-      <Grid item xs={12} md={4}>
-        <FooterSectionTitle title="About" />
+      <Grid item xs={12} md={6}>
+        <FooterSectionTitle title="COMPANY" />
         {companyMenu.map(({ label, path }, index) => (
           <NavigationItem key={index + path} label={label} path={path} />
         ))}

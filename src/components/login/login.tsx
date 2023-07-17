@@ -90,7 +90,9 @@ export default function SignInSide() {
           }}
         >
           <Box>
-            <Image src="/images/toska-logo.png" alt="Certificate icon" width={200} height={75} quality={100} />
+            <Link href="/">
+              <Image src="/images/toska-logo.png" alt="Certificate icon" width={200} height={75} quality={100} />
+            </Link>
           </Box>
           <Typography component="h1" variant="h3" sx={{ mt: 3 }}>
             Masuk dan Akses Panduan

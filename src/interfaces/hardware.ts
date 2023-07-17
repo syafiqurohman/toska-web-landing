@@ -4,6 +4,6 @@ export interface Hardware {
   cover: string
   rating: number
   ratingCount: number
-  price: number
+  price: string
   category: string
 }

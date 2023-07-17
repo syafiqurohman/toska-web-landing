@@ -3,7 +3,7 @@ import type { Navigation } from '@/interfaces/navigation'
 export const navigations: Navigation[] = [
   {
     label: 'Beranda',
-    path: '/', // '/',
+    path: 'hero', // '/',
   },
   {
     label: 'Solusi Bisnis',
@@ -19,6 +19,6 @@ export const navigations: Navigation[] = [
   },
   {
     label: 'Hubungi Kami',
-    path: 'hubkami', // '/contact',
+    path: 'hubkami', // '/fitur',
   },
 ]

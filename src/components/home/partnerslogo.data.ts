@@ -3,42 +3,42 @@ import { Partnerlogo } from '@/interfaces/partnerlogo'
 export const data: Array<Partnerlogo> = [
   {
     id: 1,
-    name: 'Grab',
-    logo: '/images/companies/grab.png',
+    name: 'bintang',
+    logo: '/images/companies/bintang-sablon.png',
   },
   {
     id: 2,
-    name: 'google',
-    logo: '/images/companies/google.png',
+    name: 'elena',
+    logo: '/images/companies/house-of-elena.png',
   },
   {
     id: 3,
-    name: 'airbnb',
-    logo: '/images/companies/airbnb.png',
+    name: 'syf',
+    logo: '/images/companies/syf-store.png',
   },
   {
     id: 4,
-    name: 'microsoft',
-    logo: '/images/companies/microsoft.png',
+    name: 'sumber-agung',
+    logo: '/images/companies/sumber-agung.png',
   },
   {
     id: 5,
-    name: 'Grab',
-    logo: '/images/companies/grab.png',
+    name: 'bintang',
+    logo: '/images/companies/bintang-sablon.png',
   },
   {
     id: 6,
-    name: 'google',
-    logo: '/images/companies/google.png',
+    name: 'elena',
+    logo: '/images/companies/house-of-elena.png',
   },
   {
     id: 7,
-    name: 'airbnb',
-    logo: '/images/companies/airbnb.png',
+    name: 'syf',
+    logo: '/images/companies/syf-store.png',
   },
   {
     id: 8,
-    name: 'microsoft',
-    logo: '/images/companies/microsoft.png',
+    name: 'sumber-agung',
+    logo: '/images/companies/sumber-agung.png',
   },
 ]

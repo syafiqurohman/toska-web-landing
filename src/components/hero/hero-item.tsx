@@ -11,15 +11,24 @@ interface Props {
 const HeroItem: FC<Props> = ({ item }) => {
   return (
     <Box sx={{ ml: 4 }}>
-      <Box sx={{ lineHeight: 0 }}>
-        <Image src={item.photo} width={450} height={450} alt={'Hero ' + item.id} />
+      <Box
+        sx={{
+          lineHeight: 0,
+          overflow: 'hidden',
+          borderRadius: 5,
+          boxShadow: 2,
+          m: 2,
+        }}
+      >
+        <Image layout="responsive" src={item.photo} width={450} height={450} alt={'Hero ' + item.id} />
       </Box>
       <Box
         sx={{
           position: 'absolute',
-          bottom: 30,
+          bottom: 50,
           boxShadow: 2,
           borderRadius: 2,
+          ml: -3,
           px: 2,
           py: 2,
           overflow: 'hidden',
@@ -39,7 +48,7 @@ const HeroItem: FC<Props> = ({ item }) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            mr: 2,
+            mr: 3,
             '& img': { width: '32px !important', height: 'auto' },
           }}
         >
