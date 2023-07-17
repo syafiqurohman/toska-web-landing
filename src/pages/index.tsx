@@ -11,7 +11,7 @@ const DynamicHomeHardware = dynamic(() => import('../components/home/hardware'))
 const DynamicHomePricing = dynamic(() => import('../components/home/pricing'))
 const DynamicHomeTestimonial = dynamic(() => import('../components/home/testimonial'))
 const DynamicHomePartners = dynamic(() => import('../components/home/partners'))
-const DynamicHomeNewsLetter = dynamic(() => import('../components/home/newsletter'))
+const DynamicHomeNewsLetter = dynamic(() => import('../components/home/cta'))
 
 const Home: NextPageWithLayout = () => {
   return (

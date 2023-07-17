@@ -6,6 +6,7 @@ import { styled } from '@mui/material/styles'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import CircularProgress from '@mui/material/CircularProgress'
+import ChangeHistoryRoundedIcon from '@mui/icons-material/ChangeHistoryRounded'
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress'
 import { data } from './whyus.data'
 
@@ -43,7 +44,7 @@ const HomeWhyUs: FC = () => {
           <Grid item xs={12} md={5}>
             <Box sx={{ position: 'relative' }}>
               <Image
-                src="/images/home-why-us.png"
+                src="/images/home-why-us1.png"
                 layout="responsive"
                 width={650}
                 height={678}
@@ -53,38 +54,68 @@ const HomeWhyUs: FC = () => {
               <Box
                 sx={{
                   position: 'absolute',
-                  top: -36,
-                  right: { xs: 0, md: -36 },
+                  top: -6,
+                  right: { xs: 0 },
                   boxShadow: 2,
-                  borderRadius: 1,
+                  borderRadius: 5,
                   px: 2.2,
                   py: 1.4,
                   zIndex: 1,
                   backgroundColor: 'background.paper',
-                  width: 190,
+                  width: 300,
                 }}
               >
-                <Typography variant="h5" sx={{ mb: 1 }}>
-                  Lorem ipsum dolor
-                </Typography>
-                <Box sx={{ mb: 2 }}>
-                  <Typography variant="subtitle1" color="text.secondary">
-                    UI/UI Design
-                  </Typography>
-                  <BorderLinearProgress variant="determinate" color="inherit" value={65} order={1} />
-                </Box>
-                <Box sx={{ mb: 2 }}>
-                  <Typography variant="subtitle1" color="text.secondary">
-                    Mobile Development
-                  </Typography>
-                  <BorderLinearProgress variant="determinate" color="inherit" value={40} order={2} />
-                </Box>
-                <Box sx={{ mb: 2 }}>
-                  <Typography variant="subtitle1" color="text.secondary">
-                    Web Development
-                  </Typography>
-                  <BorderLinearProgress variant="determinate" color="inherit" value={50} order={3} />
-                </Box>
+                <Grid container alignItems="center">
+                  <Grid item xs={6} textAlign="left">
+                    <Box
+                      sx={{
+                        height: 85,
+                        width: 100,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexDirection: 'column',
+                      }}
+                    >
+                      <Typography variant="caption" sx={{ color: 'text.disabled' }}>
+                        Progress
+                      </Typography>
+                      <Typography variant="h6" sx={{ color: '#32dc88' }}>
+                        87%
+                      </Typography>
+                      <CircularProgress
+                        sx={{ position: 'absolute', color: 'divider' }}
+                        thickness={2}
+                        variant="determinate"
+                        value={100}
+                        size={80}
+                      />
+                      <CircularProgress
+                        disableShrink
+                        thickness={2}
+                        variant="determinate"
+                        value={84}
+                        size={80}
+                        sx={{ transform: 'rotate(96deg) !important', color: '#32dc88', position: 'absolute' }}
+                      />
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6} textAlign="center">
+                    <Box
+                      sx={{
+                        height: 85,
+                        width: 100,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexDirection: 'column',
+                      }}
+                    >
+                      <Typography sx={{ fontSize: 12, fontWeight: 700, lineHeight: 1.5 }}>Target</Typography>
+                      <Typography sx={{ fontSize: 20, fontWeight: 700, lineHeight: 1.5 }}>1.000.000.000</Typography>
+                    </Box>
+                  </Grid>
+                </Grid>
               </Box>
 
               <Box
@@ -93,7 +124,7 @@ const HomeWhyUs: FC = () => {
                   bottom: -12,
                   left: { xs: 0, md: -24 },
                   boxShadow: 2,
-                  borderRadius: 1,
+                  borderRadius: 5,
                   px: 2.2,
                   py: 2,
                   zIndex: 1,
@@ -110,39 +141,20 @@ const HomeWhyUs: FC = () => {
                     flexDirection: 'column',
                   }}
                 >
-                  <Typography sx={{ fontWeight: 600, lineHeight: 1 }}>Lorem ipsum</Typography>
-                  <Typography variant="subtitle1" sx={{ mb: 1, color: 'text.disabled' }}>
-                    Lorem ipsum
-                  </Typography>
-                  <Box
-                    sx={{
-                      height: 85,
-                      width: 85,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexDirection: 'column',
-                    }}
-                  >
-                    <Typography variant="h4" sx={{ color: '#32dc88' }}>
-                      75%
-                    </Typography>
-                    <CircularProgress
-                      sx={{ position: 'absolute', color: 'divider' }}
-                      thickness={2}
-                      variant="determinate"
-                      value={85}
-                      size={85}
-                    />
-                    <CircularProgress
-                      disableShrink
-                      thickness={2}
-                      variant="determinate"
-                      value={75}
-                      size={85}
-                      sx={{ transform: 'rotate(96deg) !important', color: '#32dc88', position: 'absolute' }}
-                    />
-                  </Box>
+                  <Grid container alignItems="center">
+                    <Grid item xs={12} textAlign="left">
+                      <Typography sx={{ fontSize: 20, fontWeight: 700, lineHeight: 1.5 }}>Pendapatan</Typography>
+                      <Typography variant="caption" sx={{ color: 'text.disabled' }}>
+                        vs. Bulan Sebelumnya
+                        <ChangeHistoryRoundedIcon
+                          sx={{ color: '#32dc88', fontSize: 'small', ml: '0.5rem', mb: '-0.1rem' }}
+                        />
+                        <Typography variant="caption" sx={{ color: '#32dc88', ml: '0.03rem' }}>
+                          74%
+                        </Typography>
+                      </Typography>
+                    </Grid>
+                  </Grid>
                 </Box>
               </Box>
             </Box>
@@ -160,7 +172,7 @@ const HomeWhyUs: FC = () => {
                 fontWeight: 'bold',
               }}
             >
-              Make your{' '}
+              Toska Itu{' '}
               <Typography
                 component="mark"
                 sx={{
@@ -171,7 +183,7 @@ const HomeWhyUs: FC = () => {
                   backgroundColor: 'unset',
                 }}
               >
-                Learning <br />
+                Nyaman <br />
                 <Box
                   sx={{
                     position: 'absolute',
@@ -185,12 +197,12 @@ const HomeWhyUs: FC = () => {
                   <img src="/images/headline-curve.svg" alt="Headline curve" />
                 </Box>
               </Typography>
-              Enjoyable
+              Memudahkan
             </Typography>
 
             <Typography sx={{ color: 'text.secondary', mb: 2, ml: { xs: 0, md: 4 } }}>
-              Set the way of learning according to your wishes with some of the benefits that you get us, so you on
-              enjoy the lessons that we provide.
+              Membawa pengalaman yang nyaman dan mudah ke tingkat berikutnya dengan inovasi yang menarik dan solusi yang
+              efektif.
             </Typography>
 
             <Grid container spacing={2} sx={{ ml: { xs: 0, md: 2 } }}>

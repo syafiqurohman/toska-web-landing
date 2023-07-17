@@ -59,9 +59,9 @@ const HardwareCardItem: FC<Props> = ({ item }) => {
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Typography variant="h5" color="primary.main">
-              {'$' + item.price}
+              {'Rp ' + item.price}
             </Typography>
-            <Typography variant="h6">/ course</Typography>
+            <Typography variant="h6">*</Typography>
           </Box>
           <IconButton
             color="primary"

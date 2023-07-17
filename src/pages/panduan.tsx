@@ -7,7 +7,7 @@ import { MainLayout } from '@/components/layout'
 const DynamicPanduanHero = dynamic(() => import('../components/panduan/hero'))
 const DynamicPanduanSidebar = dynamic(() => import('../components/panduan/sidebar'))
 
-const Home: NextPageWithLayout = () => {
+const Panduan: NextPageWithLayout = () => {
   return (
     <>
       <DynamicPanduanHero />
@@ -16,6 +16,6 @@ const Home: NextPageWithLayout = () => {
   )
 }
 
-Home.getLayout = (page) => <MainLayout>{page}</MainLayout>
+Panduan.getLayout = (page) => <MainLayout>{page}</MainLayout>
 
-export default Home
+export default Panduan

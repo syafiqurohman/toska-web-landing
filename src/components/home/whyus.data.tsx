@@ -12,23 +12,23 @@ interface Data {
 
 export const data: Data[] = [
   {
-    title: 'Easy Accessable',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
+    title: 'Akses Flexible',
+    description: 'Kelola bisnis toko dari berbagai perangkat, di mana pun dan kapan pun Anda inginkan. ',
     icon: <ArtTrackIcon />,
   },
   {
-    title: 'More Affordable Cost',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
+    title: 'Visual Menarik',
+    description: 'Antarmuka sederhana dan intuitif, mudah mengakses dan menjelajahi semua fitur',
     icon: <AttachMoneyIcon />,
   },
   {
-    title: 'Flexible Study Time',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
+    title: 'Kelengkapan Fitur',
+    description: 'Fitur komprehensif pengelolaan inventaris, Stok, dan manajemen pelanggan.',
     icon: <LocalLibraryIcon />,
   },
   {
-    title: 'Consultation With Mentor',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
+    title: 'Anti Ribet',
+    description: 'Dirancang untuk menghilangkan kerumitan yang sering terjadi dalam manajemen toko',
     icon: <ContactSupportIcon />,
   },
 ]
