@@ -27,7 +27,7 @@ const HomeNewsLetter: FC = () => {
     return (
       <Box display="flex" flexDirection="column" alignItems="flex-start" justifyContent="center" sx={{ mt: 3 }}>
         <Typography variant="h1" component="h2" sx={{ mb: 1, fontSize: { xs: 32, md: 42 }, textAlign: 'left' }}>
-          Pakai Toska Hidup Jadi Berwarna.
+          Pakai Toska Bisnis Jadi Berwarna.
         </Typography>
         <Typography sx={{ mb: 3, textAlign: 'left' }}>
           Nikmati beragam fitur dan layanan lengkap untuk kelola bisnismu

@@ -12,7 +12,7 @@ import { StyledButton } from '@/components/styled-button'
 import SendRoundedIcon from '@mui/icons-material/SendRounded'
 import IconArrowBack from '@mui/icons-material/ArrowBack'
 import IconArrowForward from '@mui/icons-material/ArrowForward'
-import { HeroItem } from '@/components/hero'
+import { HeroItem } from '@/components/hero-item'
 import { data } from './hero.data'
 
 interface Exp {
