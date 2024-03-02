@@ -1,6 +1,6 @@
 <h1 align="center">
-  <a href="https://github.com/hiriski/coursespace-landing-page">
-  Coursespace - React Online Course Landing Page
+  <a href="https://github.com/syafiqurohman/toska-web-landing">
+  TOSKA | The Most Powerfull Retail App
   </a>
   <br />
 </h1>
@@ -10,9 +10,6 @@
 **Coursespace** is a free landing page template built on top of Material UI and fully coded in **React**.
 Simple & light is designed to provide all the basic components using the `sx` prop for a developer need to create landing page for Online Course product.
 
-## Live Demo
-
-Take a look the live demo here 👉 [https://coursespace.vercel.app/](https://coursespace.vercel.app/)
 
 ## Getting Started
 
@@ -62,7 +59,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
    <a href="https://dribbble.com/naiflaramadhan"><img src="https://cdn.dribbble.com/users/5147050/avatars/normal/cd7b217b7d0cde417ef7d64ac123363d.png" alt="Alfian Ramadhan" width="52" height="52"></a>
   </p>
   <p>
-  Designed by
+  Created by
   <p> 
-  <a href="https://dribbble.com/naiflaramadhan">Alfian Ramadhan</a>
+  <a href="https://dribbble.com/naiflaramadhan">Syafiqurohman</a>
 </h6>
